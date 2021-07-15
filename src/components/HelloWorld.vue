@@ -1,24 +1,8 @@
 <template>
   <h1>{{ msg }}</h1>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Documentation
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
-  </p>
-
-  <button type="button" @click="state.count++">
-    count is: {{ state.count }}
-  </button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineProps, reactive } from 'vue'
 
 defineProps({
@@ -26,6 +10,14 @@ defineProps({
 })
 
 const state = reactive({ count: 0 })
+type Course = {
+  id: number,
+  name: string
+}
+const courses = reactive<Course[]>([{ id:1, name: 'kaikeba'}])
+fetch('/api-dev/users')
+.then((res) => res.json())
+.then((users) => console.log(users));
 </script>
 
 <style scoped>

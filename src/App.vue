@@ -1,22 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+      <img alt="Vue logo" src="@/assets/logo.png" />
+      <img alt="Vue logo" :class="classes.logo" :src="logo" />
+      <HelloWorld msg="Hello Vue 3 + Vite" />
+      <a>sddf</a>
+  </div>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
+import HelloWorld from 'comps/HelloWorld.vue'
+import logo from '@/assets/logo.png'
+import classes from './App.module.css'
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scope>
+$link-color: red;
+a {
+  color:$link-color
 }
+  
 </style>
