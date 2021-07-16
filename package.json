@@ -10,8 +10,7 @@
         "test:unit": "jest"
     },
     "gitHooks": {
-        "pre-commit": "lint-staged",
-        "pre-push": "npm run test:unit"
+        "pre-commit": "lint-staged"
     },
     "lint-staged": {
         "*.{js,vue}": "eslint --fix"
